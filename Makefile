@@ -9,6 +9,9 @@ build:
 
 	docker build -t dsevilla/hbase-regionserver:$(current_branch) ./hregionserver
 	docker push dsevilla/hbase-regionserver:$(current_branch)
+	
+	docker build -t dsevilla/hbase-thriftserver:$(current_branch) ./hthriftserver
+	docker push dsevilla/hbase-thriftserver:$(current_branch)
 
 	docker build -t dsevilla/hbase-standalone:$(current_branch) ./standalone
 	docker push dsevilla/hbase-standalone:$(current_branch)

@@ -88,6 +88,17 @@ services:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zoo:2181 hbase-master:16010"
     ports:
       - 16030:16030
+
+  hbase-thrift:
+    image: dsevilla/hbase-thriftserver:1.0.0-hbase1.3.5
+    container_name: hbase-thriftserver
+    hostname: hbase-thriftserver
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region
+      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zoo:2181 hbase-master:16010 hbase-regionserver:16030"
+    ports:
       - 9090:9090
 
 volumes:
