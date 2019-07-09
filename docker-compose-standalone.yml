@@ -48,7 +48,7 @@ services:
       - ./hadoop.env
 
   hbase:
-    image: bde2020/hbase-standalone:1.0.0-hbase1.2.6
+    image: dsevilla/hbase-standalone:1.0.0-hbase1.3.5
     container_name: hbase
     volumes:
       - hbase_data:/hbase-data
@@ -58,6 +58,7 @@ services:
       - 16010:16010
       - 16020:16020
       - 16030:16030
+      - 9090:9090
       - 2888:2888
       - 3888:3888
       - 2181:2181

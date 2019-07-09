@@ -1,8 +1,9 @@
-FROM bde2020/hbase-base:1.0.0-hbase1.2.6
+FROM dsevilla/hbase-base:1.0.0-hbase1.3.5
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
 EXPOSE 16020 16030
+EXPOSE 9090 9090
 
 CMD ["/run.sh"]
